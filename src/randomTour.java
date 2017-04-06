@@ -15,7 +15,7 @@ public class randomTour {
 		
 		ArrayList<Integer> t = new ArrayList<Integer>(); 
 		
-		for (int i=1;i<=n;i++){
+		for (int i=0;i<n;i++){
 			p.add(i);
 		}
 		int i;

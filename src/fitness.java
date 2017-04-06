@@ -15,10 +15,11 @@ public class fitness {
 		ArrayList<Integer> t = new ArrayList<Integer>();
 		ArrayList<Integer> tour = new ArrayList<Integer>();
 		
-		for (int i=0;i<=n;i++){
-			t.add(i);
-		}
-		//t=randomTour.tour(n);
+		//for (int i=0;i<=n;i++){
+		//	t.add(i);
+		//}
+		
+		t=randomTour.tour(n);
 		
 		//Path of the Dataset File
 		
