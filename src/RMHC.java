@@ -6,7 +6,7 @@ public class RMHC {
 		// TODO Auto-generated method stub
 		
 		//Number of iterations to run the RMHC Algorithm
-		int iter=2500;
+		int iter=1000;
 		
 		//Number of cities to visit
 		int n=48;
