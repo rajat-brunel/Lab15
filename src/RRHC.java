@@ -5,6 +5,10 @@ public class RRHC {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		double fitness_RRHC=200000;
+		int iteration = 0;
+		
+		for (int j=0;j<10;j++){
 		int iter=100;
 		
 		//Number of cities to visit
@@ -39,7 +43,14 @@ public class RRHC {
 		
 		System.out.println("Best Route was: \n" + s);
 		System.out.println("\nBest fitness was: " + f);
-
+		
+		if (f<fitness_RRHC){
+			fitness_RRHC=f;
+			iteration=j;
+		}
+		System.out.println("\nThe Best Fitness from all the runs was : " + fitness_RRHC);
+		System.out.println("\nThe Iteration was : " + iteration);
+		}
 	}
 
 }
