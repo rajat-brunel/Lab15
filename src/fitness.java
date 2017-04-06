@@ -7,22 +7,26 @@ public class fitness {
 		//Number of cities to visit
 		
 		int n=48;
-		distance(n);
+		
+		ArrayList<Integer> t = new ArrayList<Integer>();
+		t=randomTour.tour(n);
+		
+		distance(n,t);
 		
 	}
 	
-	public static double distance(int n){
+	public static double distance(int n, ArrayList<Integer> t){
 		//A tour
 				//Added integer values depending upon the length of the tour
 				//This integer value is the number of cities to visit i.e. tour
 				
-				ArrayList<Integer> t = new ArrayList<Integer>();
+				
 				
 				//for (int i=0;i<=n;i++){
 				//	t.add(i);
 				//}
 				
-				t=randomTour.tour(n);
+				
 				
 				//Path of the Dataset File
 				
