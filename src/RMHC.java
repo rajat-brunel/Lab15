@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class RMHC {
 
@@ -5,6 +6,8 @@ public class RMHC {
 		// TODO Auto-generated method stub
 		
 		int iter;
+		int n;
+		
 		
 	}
 
