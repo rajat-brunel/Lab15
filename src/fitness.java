@@ -53,7 +53,7 @@ public class fitness {
 					//Adding the sum from previous cities
 					s= s + dist[a][b];
 					
-					System.out.println("dist " + a + " "+ b +" = " + dist[a][b]);
+				//	System.out.println("dist " + a + " "+ b +" = " + dist[a][b]);
 				} 
 				
 				//As we have to return to our starting city
@@ -62,7 +62,7 @@ public class fitness {
 				//get the city at the start
 				int start_city = t.get(0);
 				
-				System.out.println("dist " + end_city + " "+ start_city +" = " + dist[end_city][start_city]);
+			//	System.out.println("dist " + end_city + " "+ start_city +" = " + dist[end_city][start_city]);
 				//Add the distance between the start city to the end city 
 				s= s+dist[end_city][start_city];
 				
