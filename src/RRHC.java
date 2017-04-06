@@ -1,20 +1,17 @@
 import java.util.ArrayList;
 
-public class RMHC {
+public class RRHC {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//Number of iterations to run the RMHC Algorithm
-		int iter=2500;
+		int iter=100;
 		
 		//Number of cities to visit
 		int n=48;
 		
 		//Random Tour
 		ArrayList<Integer> s = new ArrayList<Integer>();
-		
-	//	ArrayList<Integer> s_final = new ArrayList<Integer>();
 		
 		
 		s=randomTour.tour(n);
@@ -24,7 +21,6 @@ public class RMHC {
 		
 		//Fitness Current Solution
 		double f=fitness.distance(n,s);
-	//	double f_final=0;
 		
 		change=SmallChange.swap(s, n);
 		
@@ -43,7 +39,7 @@ public class RMHC {
 		
 		System.out.println("Best Route was: \n" + s);
 		System.out.println("\nBest fitness was: " + f);
-		
+
 	}
 
 }
