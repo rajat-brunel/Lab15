@@ -6,6 +6,7 @@ public class SHC {
 		// TODO Auto-generated method stub
 		
 		int n=48;
+		int iter=2500;
 		
 		ArrayList<Integer> s = new ArrayList<Integer>();
 		
@@ -34,9 +35,28 @@ public class SHC {
 		
 		double val=Math.pow(e, power);
 		
-		
-		
 		System.out.println("Probability is: "+ p + " val " + val);
+		
+		for (int i=0;i<iter;i++){
+			
+			s_new=SmallChange.swap(s_new, n);
+			
+			f_new=fitness.distance(n, s_new);
+			
+			power=(f_new-f)/T;
+			
+			double p_new=1/(1+(Math.pow(e, power)));
+			
+			if (p_new>p){
+				
+				s=s_new;
+				f=f_new;
+			}
+		}
+		
+		System.out.println("Best Route was: \n" + s);
+		System.out.println("\nBest fitness was: " + f);
+		
 		
 	}
 
