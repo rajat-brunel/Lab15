@@ -6,7 +6,7 @@ public class fitness {
 		
 		//Number of cities to visit
 		
-		int n=48;
+		int n=4;
 		
 		ArrayList<Integer> t = new ArrayList<Integer>();
 		t=randomTour.tour(n);

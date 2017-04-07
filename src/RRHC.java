@@ -8,8 +8,8 @@ public class RRHC {
 		double fitness_RRHC=200000;
 		int iteration = 0;
 		
-		for (int j=0;j<10;j++){
-		int iter=100;
+		for (int j=0;j<5;j++){
+		int iter=500;
 		
 		//Number of cities to visit
 		int n=48;

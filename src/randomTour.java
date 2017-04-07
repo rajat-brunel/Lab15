@@ -27,7 +27,7 @@ public class randomTour {
 				i=CS2004.UI(0,p.size());
 			}while
 				(p.size()<i || p.size()==i);
-			
+		
 			int add=p.get(i);
 			t.add(add);
 			p.remove(i);
