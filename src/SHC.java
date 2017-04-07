@@ -20,7 +20,7 @@ public class SHC {
 		
 		double f_new=fitness.distance(n, s_new);
 		
-		double k=125.0;
+		double k=500.0;
 		
 		double T=f/k;
 		
