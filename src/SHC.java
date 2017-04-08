@@ -24,18 +24,18 @@ public class SHC {
 		
 		double T=f/k;
 		
-		System.out.println("The value of T is :" + T);
+	//	System.out.println("The value of T is :" + T);
 		
 		double e=Math.E;
 		
 		
 		double power=(f_new-f)/T;
 		
-		double p=1/(1+(Math.pow(e, power)));
+	//  double p=1/(1+(Math.pow(e, power)));
 		
 		double val=Math.pow(e, power);
 		
-		System.out.println("Probability is: "+ p + " val " + val);
+	//	System.out.println("Probability is: "+ p + " val " + val);
 		
 		for (int i=0;i<iter;i++){
 			
@@ -47,8 +47,19 @@ public class SHC {
 			
 			double p_new=1/(1+(Math.pow(e, power)));
 			
-			if (p_new>p){
+			if (f_new>f){
 				
+				if (p_new > CS2004.UR(0.0, 1.0)){
+					
+					s=s_new;
+					f=f_new;
+				}
+				else{
+					s=s;
+					f=f;
+				}
+			}
+			else{
 				s=s_new;
 				f=f_new;
 			}
