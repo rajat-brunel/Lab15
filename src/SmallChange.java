@@ -28,7 +28,7 @@ public class SmallChange {
 			j= CS2004.UI(1,r_tour.size()-1);
 		}
 		
-		System.out.println(i + " " + j);
+	//	System.out.println(i + " " + j);
 		
 		for (int a=0;a<n;a++){
 			
@@ -38,7 +38,7 @@ public class SmallChange {
 		changed_tour.set(i,r_tour.get(j));
 		changed_tour.set(j,r_tour.get(i));
 		
-		System.out.println("Changed Tour: \n" + changed_tour);
+	//	System.out.println("Changed Tour: \n" + changed_tour);
 		
 		return changed_tour;
 		

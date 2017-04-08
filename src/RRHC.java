@@ -7,9 +7,10 @@ public class RRHC {
 		
 		double fitness_RRHC=200000;
 		int iteration = 0;
+		int iter=500;
 		
 		for (int j=0;j<5;j++){
-		int iter=500;
+		
 		
 		//Number of cities to visit
 		int n=48;
@@ -48,9 +49,10 @@ public class RRHC {
 			fitness_RRHC=f;
 			iteration=j;
 		}
+		
+		}
 		System.out.println("\nThe Best Fitness from all the runs was : " + fitness_RRHC);
 		System.out.println("\nThe Iteration was : " + iteration);
-		}
 	}
 
 }

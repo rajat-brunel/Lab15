@@ -11,6 +11,7 @@ public class SHC {
 		ArrayList<Integer> s = new ArrayList<Integer>();
 		
 		ArrayList<Integer> s_new = new ArrayList<Integer>();
+		int shc=0;
 		
 		s=randomTour.tour(n);
 		
@@ -53,6 +54,8 @@ public class SHC {
 					
 					s=s_new;
 					f=f_new;
+					shc++;
+					System.out.println("Chose Worse " + p_new);
 				}
 				else{
 					s=s;
@@ -63,11 +66,12 @@ public class SHC {
 				s=s_new;
 				f=f_new;
 			}
+			System.out.println("Current fitness : " + f);	
 		}
 		
 		System.out.println("Best Route was: \n" + s);
 		System.out.println("\nBest fitness was: " + f);
-		
+		System.out.println("\nSHC: " + shc);
 		
 	}
 

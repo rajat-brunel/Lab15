@@ -69,7 +69,7 @@ public class fitness {
 				
 				//Output the total distance 
 				//We need to minimise this value
-				System.out.println("Length of the tour is  : "+   s); 
+			//	System.out.println("Length of the tour is  : "+   s); 
 				
 				return s;
 	}

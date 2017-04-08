@@ -39,6 +39,8 @@ public class RMHC {
 					f=f_new;
 					
 				}
+			
+		System.out.println("Current fitness : " + f);	
 		}
 		
 		System.out.println("Best Route was: \n" + s);
