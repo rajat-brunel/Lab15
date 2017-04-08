@@ -55,7 +55,7 @@ public class SHC {
 					s=s_new;
 					f=f_new;
 					shc++;
-					System.out.println("Chose Worse " + p_new);
+					System.out.println("Chose Worse " + " Probabilty was: " + p_new);
 				}
 				else{
 					s=s;
