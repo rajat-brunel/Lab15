@@ -5,22 +5,15 @@ public class RRHC {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public static void RRHC(int iter, int n, int runs, ArrayList<Integer> s){
 		double fitness_RRHC=200000;
+
 		int iteration = 0;
-		int iter=500;
-		
-		for (int j=0;j<5;j++){
-		
-		
-		//Number of cities to visit
-		int n=48;
-		
-		//Random Tour
-		ArrayList<Integer> s = new ArrayList<Integer>();
-		
-		
-		s=randomTour.tour(n);
-		
+		int j=runs;
+		for (j=0;j<runs;j++){
+			
 		ArrayList<Integer> change = new ArrayList<Integer>();
 		
 		
@@ -31,7 +24,7 @@ public class RRHC {
 		
 		
 		for (int i=0;i<iter;i++){
-			change=SmallChange.swap(change, n);
+			change=SmallChange.swap(s, n);
 			double f_new=fitness.distance(n, change);
 			
 				if (f_new<f){
@@ -42,17 +35,17 @@ public class RRHC {
 				}
 		}
 		
-		System.out.println("Best Route was: \n" + s);
-		System.out.println("\nBest fitness was: " + f);
+	//	System.out.println("Best Route was: \n" + s);
+	//	System.out.println("\nBest fitness was: " + f);
 		
 		if (f<fitness_RRHC){
 			fitness_RRHC=f;
 			iteration=j;
 		}
-		
+		s=randomTour.tour(n);
 		}
-		System.out.println("\nThe Best Fitness from all the runs was : " + fitness_RRHC);
+		System.out.println("\nThe Best Fitness from all the runs was (RRHC) : " + fitness_RRHC);
 		System.out.println("\nThe Iteration was : " + iteration);
 	}
-
+	
 }

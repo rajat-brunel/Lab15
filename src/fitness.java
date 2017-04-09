@@ -6,10 +6,11 @@ public class fitness {
 		
 		//Number of cities to visit
 		
-		int n=4;
+		int n=48;
 		
 		ArrayList<Integer> t = new ArrayList<Integer>();
-		t=randomTour.tour(n);
+		String filename="TSP_Check.txt";
+		t=TSP.ReadIntegerFile(filename);
 		
 		distance(n,t);
 		
@@ -63,14 +64,17 @@ public class fitness {
 				int start_city = t.get(0);
 				
 			//	System.out.println("dist " + end_city + " "+ start_city +" = " + dist[end_city][start_city]);
+				
 				//Add the distance between the start city to the end city 
 				s= s+dist[end_city][start_city];
 				
 				
 				//Output the total distance 
-				//We need to minimise this value
+				
+				
 			//	System.out.println("Length of the tour is  : "+   s); 
 				
+				//We need to minimise this value
 				return s;
 	}
 }

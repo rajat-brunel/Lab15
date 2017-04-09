@@ -10,18 +10,23 @@ public class SHC {
 		
 		ArrayList<Integer> s = new ArrayList<Integer>();
 		
-		ArrayList<Integer> s_new = new ArrayList<Integer>();
-		int shc=0;
+		
 		
 		s=randomTour.tour(n);
 		
+		
+		SHC(iter,n,s);		
+	}
+
+	public static void SHC(int iter, int n, ArrayList<Integer> s){
+		
+		ArrayList<Integer> s_new = new ArrayList<Integer>();
+		int shc=0;
 		double f=fitness.distance(n,s);
-		
 		s_new=SmallChange.swap(s, n);
-		
 		double f_new=fitness.distance(n, s_new);
 		
-		double k=500.0;
+		double k=2500.0;
 		
 		double T=f/k;
 		
@@ -40,7 +45,7 @@ public class SHC {
 		
 		for (int i=0;i<iter;i++){
 			
-			s_new=SmallChange.swap(s_new, n);
+			s_new=SmallChange.swap(s, n);
 			
 			f_new=fitness.distance(n, s_new);
 			
@@ -55,7 +60,7 @@ public class SHC {
 					s=s_new;
 					f=f_new;
 					shc++;
-					System.out.println("Chose Worse " + " Probabilty was: " + p_new);
+				//	System.out.println("Chose Worse " + " Probabilty was: " + p_new);
 				}
 				else{
 					s=s;
@@ -65,14 +70,13 @@ public class SHC {
 			else{
 				s=s_new;
 				f=f_new;
-			}
-			System.out.println("Current fitness : " + f);	
+		}
+	//		System.out.println("Current fitness : " + f);	
 		}
 		
-		System.out.println("Best Route was: \n" + s);
-		System.out.println("\nBest fitness was: " + f);
-		System.out.println("\nSHC: " + shc);
+	//	System.out.println("Best Route was: \n" + s);
+		System.out.println("\nBest fitness was (SHC): " + f);
+	//	System.out.println("\nSHC: " + shc);
 		
 	}
-
 }

@@ -19,33 +19,36 @@ public class RMHC {
 		
 		s=randomTour.tour(n);
 		
-		ArrayList<Integer> change = new ArrayList<Integer>();
+		RMHC(iter,n,s);
+	}
+	
+	public static void RMHC(int iter, int n, ArrayList<Integer> s){	
 		
-		
-		//Fitness Current Solution
-		double f=fitness.distance(n,s);
-	//	double f_final=0;
+	ArrayList<Integer> change = new ArrayList<Integer>();
+	
+	
+	//Fitness Current Solution
+	double f=fitness.distance(n,s);
+//	double f_final=0;
+	
+	for (int i=0;i<iter;i++){
 		
 		change=SmallChange.swap(s, n);
+		double f_new=fitness.distance(n, change);
 		
-		
-		for (int i=0;i<iter;i++){
-			change=SmallChange.swap(change, n);
-			double f_new=fitness.distance(n, change);
-			
-				if (f_new<f){
+			if (f_new<f){
+				
+				s=change;
+				f=f_new;
 					
-					s=change;
-					f=f_new;
-					
-				}
-			
-		System.out.println("Current fitness : " + f);	
-		}
+			}
 		
-		System.out.println("Best Route was: \n" + s);
-		System.out.println("\nBest fitness was: " + f);
-		
+//	System.out.println(s);	
 	}
+	
+	System.out.println("Best Route was: \n" + s);
+	System.out.println("\nBest fitness was (RMHC): " + f);
+	
+}
 
 }
