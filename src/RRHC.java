@@ -5,6 +5,15 @@ public class RRHC {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		int iter=5000;
+		int n=48;
+		int runs=5;
+		
+		ArrayList<Integer> s = new ArrayList<Integer>();
+		
+		s=randomTour.tour(n);
+		
+		RRHC(1000,n,runs,s);
 	}
 	
 	public static void RRHC(int iter, int n, int runs, ArrayList<Integer> s){
@@ -36,7 +45,7 @@ public class RRHC {
 		}
 		
 	//	System.out.println("Best Route was: \n" + s);
-	//	System.out.println("\nBest fitness was: " + f);
+		System.out.println("\nBest fitness was: " + f);
 		
 		if (f<fitness_RRHC){
 			fitness_RRHC=f;
@@ -45,7 +54,7 @@ public class RRHC {
 		s=randomTour.tour(n);
 		}
 		System.out.println("\nThe Best Fitness from all the runs was (RRHC) : " + fitness_RRHC);
-		System.out.println("\nThe Iteration was : " + iteration);
+		System.out.println("\nThe Iteration was : " + (iteration+1));
 	}
 	
 }

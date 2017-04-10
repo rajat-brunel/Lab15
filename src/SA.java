@@ -7,7 +7,7 @@ import java.util.ArrayList;
  		
  		
  		int n=48;
-		int iter=2500;
+		int iter=5000;
  		
  		ArrayList<Integer> s = new ArrayList<Integer>();
  		
@@ -18,12 +18,16 @@ import java.util.ArrayList;
  	}
 public static void SA(int iter, int n, ArrayList<Integer> s){
 	double f=fitness.distance(n,s);
+	double f_new=0.0;
 //		System.out.println("Fitness: " + f);
 		
-		double k=2500.0;
+		
 		
 		ArrayList<Integer> s_new = new ArrayList<Integer>();
-
+		
+		
+		double k=500.0;
+		
 	
 	double T_start=f/k;
 	//	double T_start=119.3875;
@@ -46,7 +50,7 @@ public static void SA(int iter, int n, ArrayList<Integer> s){
 		
 		double p=0.0;
 		double delta_f=0.0;
-		double f_new=0.0;
+		
 		s_new=SmallChange.swap(s, n);
 		
 		for(int i=0;i<iter;i++){
@@ -77,7 +81,7 @@ public static void SA(int iter, int n, ArrayList<Integer> s){
 		}
 //			System.out.println("iter " + times + " temp " + temp + " p " + p + " delta f " + delta_f);
 			temp=cr*temp;
-//			System.out.println("Current fitness : " + f);
+//		System.out.println(f);
 		//	System.out.println("Current route : " + s);
 			times++;
 		}

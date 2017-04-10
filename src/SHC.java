@@ -18,7 +18,7 @@ public class SHC {
 		SHC(iter,n,s);		
 	}
 
-	public static void SHC(int iter, int n, ArrayList<Integer> s){
+	public static double SHC(int iter, int n, ArrayList<Integer> s){
 		
 		ArrayList<Integer> s_new = new ArrayList<Integer>();
 		int shc=0;
@@ -26,11 +26,11 @@ public class SHC {
 		s_new=SmallChange.swap(s, n);
 		double f_new=fitness.distance(n, s_new);
 		
-		double k=2500.0;
+		double k=2000.0;
 		
 		double T=f/k;
 		
-	//	System.out.println("The value of T is :" + T);
+		System.out.println("The value of T is :" + T);
 		
 		double e=Math.E;
 		
@@ -74,9 +74,9 @@ public class SHC {
 	//		System.out.println("Current fitness : " + f);	
 		}
 		
-	//	System.out.println("Best Route was: \n" + s);
+		System.out.println("Best Route was: \n" + s);
 		System.out.println("\nBest fitness was (SHC): " + f);
 	//	System.out.println("\nSHC: " + shc);
-		
+		return f;
 	}
 }

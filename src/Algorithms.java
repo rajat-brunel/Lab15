@@ -6,7 +6,7 @@ public class Algorithms {
 		// TODO Auto-generated method stub
 		
 		
-		int iter=2500;
+		int iter=10000;
 		int runs=5;
 		int n=48;
 		
@@ -16,11 +16,9 @@ public class Algorithms {
 		s=randomTour.tour(n);
 		
 		RMHC.RMHC(iter, n, s);
-		RRHC.RRHC(iter, n, runs,s);
+		RRHC.RRHC(iter/runs, n, runs,s);
 		SHC.SHC(iter, n, s);
-		SA.SA(iter, n, s);
-		
-		
+		SA.SA(iter, n, s);	
 		
 	}
 
