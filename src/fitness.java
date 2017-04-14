@@ -2,21 +2,8 @@ import java.util.ArrayList;
 
 public class fitness {
 
-	public static void main(String[] args) {
-		
-		//Number of cities to visit
-		
-		int n=48;
-		
-		ArrayList<Integer> t = new ArrayList<Integer>();
-		String filename="TSP_Check.txt";
-		t=TSP.ReadIntegerFile(filename);
-		
-		distance(n,t);
-		
-	}
 	
-	public static double distance(int n, ArrayList<Integer> t){
+	public static double distance(int n, ArrayList<Integer> t, double dist[][]){
 		//A tour
 				//Added integer values depending upon the length of the tour
 				//This integer value is the number of cities to visit i.e. tour
@@ -31,12 +18,11 @@ public class fitness {
 				
 				//Path of the Dataset File
 				
-				String filename="TSP_48.txt";
 				
 				//distance matrix
 				//Read the Dataset file through the string
 				
-				double dist[][]=TSP.ReadArrayFile(filename, " ");
+				
 				
 				//Initialise variable for the Final length of the tour
 				

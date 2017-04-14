@@ -7,15 +7,15 @@ public class randomTour {
 			
 		int n=48;
 		
-		tour(n);
+		tour();
 	}
 	
-	public static ArrayList<Integer> tour(int n){
+	public static ArrayList<Integer> tour(){
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		
 		ArrayList<Integer> t = new ArrayList<Integer>(); 
 		
-		for (int i=0;i<n;i++){
+		for (int i=0;i<Algorithms.cities;i++){
 			p.add(i);
 		}
 		int i;
@@ -28,12 +28,12 @@ public class randomTour {
 			}while
 				(p.size()<i || p.size()==i);
 		
+		
 			int add=p.get(i);
 			t.add(add);
 			p.remove(i);
 			
 		}
-		System.out.println("Random Tour: ");
 		System.out.println(t);
 		return t;
 	

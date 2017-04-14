@@ -6,14 +6,11 @@ public class SHC {
 		// TODO Auto-generated method stub
 		
 		int n=48;
-		int iter=2500;
+		int iter=25000;
 		
 		ArrayList<Integer> s = new ArrayList<Integer>();
-		
-		
-		
+			
 		s=randomTour.tour(n);
-		
 		
 		SHC(iter,n,s);		
 	}
@@ -21,12 +18,12 @@ public class SHC {
 	public static double SHC(int iter, int n, ArrayList<Integer> s){
 		
 		ArrayList<Integer> s_new = new ArrayList<Integer>();
-		int shc=0;
+		
 		double f=fitness.distance(n,s);
 		s_new=SmallChange.swap(s, n);
 		double f_new=fitness.distance(n, s_new);
 		
-		double k=2000.0;
+		double k=1500.0;
 		
 		double T=f/k;
 		
@@ -37,11 +34,11 @@ public class SHC {
 		
 		double power=(f_new-f)/T;
 		
-	//  double p=1/(1+(Math.pow(e, power)));
+	
 		
 		double val=Math.pow(e, power);
 		
-	//	System.out.println("Probability is: "+ p + " val " + val);
+	
 		
 		for (int i=0;i<iter;i++){
 			
@@ -59,8 +56,7 @@ public class SHC {
 					
 					s=s_new;
 					f=f_new;
-					shc++;
-				//	System.out.println("Chose Worse " + " Probabilty was: " + p_new);
+				
 				}
 				else{
 					s=s;
@@ -71,12 +67,18 @@ public class SHC {
 				s=s_new;
 				f=f_new;
 		}
-	//		System.out.println("Current fitness : " + f);	
+
 		}
 		
-		System.out.println("Best Route was: \n" + s);
+	//	System.out.println("Best Route was: \n" + s);
 		System.out.println("\nBest fitness was (SHC): " + f);
-	//	System.out.println("\nSHC: " + shc);
+		
+		double eff=Efficiency.CalculateEfficiencyOfMST(f);
+		double opt_eff=Efficiency.CalcEfficiencyOPT(f);
+		
+		System.out.println(opt_eff);
+		System.out.println(eff);
+		
 		return f;
 	}
 }

@@ -22,19 +22,20 @@ public class RMHC {
 		RMHC(iter,n,s);
 	}
 	
-	public static void RMHC(int iter, int n, ArrayList<Integer> s){	
+	public static ArrayList<Integer> RMHC(int iter, int n, ArrayList<Integer> s){	
 		
 	ArrayList<Integer> change = new ArrayList<Integer>();
-	
+	String filename="TSP_48.txt";
+	double dist[][]=TSP.ReadArrayFile(filename, " ");
 	
 	//Fitness Current Solution
-	double f=fitness.distance(n,s);
+	double f=fitness.distance(n,s,dist);
 //	double f_final=0;
 	
 	for (int i=0;i<iter;i++){
 		
 		change=SmallChange.swap(s, n);
-		double f_new=fitness.distance(n, change);
+		double f_new=fitness.distance(n, change,dist);
 		
 			if (f_new<f){
 				
@@ -43,11 +44,17 @@ public class RMHC {
 					
 			}
 		
-//	System.out.println(s);	
+//	System.out.println(f);	
 	}
 	
-	System.out.println("Best Route was: \n" + s);
+//	System.out.println("Best Route was: \n" + s);
 	System.out.println("\nBest fitness was (RMHC): " + f);
+	double eff=Efficiency.CalculateEfficiencyOfMST(f);
+//	double opt_eff=Efficiency.CalcEfficiencyOPT(f);
+	
+//	System.out.println(opt_eff);
+	System.out.println(eff);
+	return s;
 	
 }
 

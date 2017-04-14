@@ -7,7 +7,7 @@ import java.util.ArrayList;
  		
  		
  		int n=48;
-		int iter=5000;
+		int iter=10000;
  		
  		ArrayList<Integer> s = new ArrayList<Integer>();
  		
@@ -16,24 +16,20 @@ import java.util.ArrayList;
  		SA(iter,n,s);
 
  	}
-public static void SA(int iter, int n, ArrayList<Integer> s){
+public static double SA(int iter, int n, ArrayList<Integer> s){
 	double f=fitness.distance(n,s);
 	double f_new=0.0;
 //		System.out.println("Fitness: " + f);
+			
+	ArrayList<Integer> s_new = new ArrayList<Integer>();
 		
-		
-		
-		ArrayList<Integer> s_new = new ArrayList<Integer>();
-		
-		
-		double k=500.0;
-		
+	double k=50.0;	
 	
 	double T_start=f/k;
 	//	double T_start=119.3875;
 	System.out.println("T: " + T_start);
 		
-		double T_iter=0.001;
+	double T_iter=0.001;
 		
 
 		
@@ -55,7 +51,7 @@ public static void SA(int iter, int n, ArrayList<Integer> s){
 		
 		for(int i=0;i<iter;i++){
 			
-			s_new=SmallChange.swap(s, n);
+		s_new=SmallChange.swap(s, n);
 		f_new=fitness.distance(n, s_new);
 		
 		if (f_new>f){
@@ -65,7 +61,7 @@ public static void SA(int iter, int n, ArrayList<Integer> s){
 			double a=(delta_f/temp);
 			p=Math.exp(a);
 			
-			if(p <CS2004.UR(0.0, 1.0)){
+			if(p<CS2004.UR(0.0, 1.0)){
 				s=s;
 				f=f;
 			}
@@ -89,6 +85,14 @@ public static void SA(int iter, int n, ArrayList<Integer> s){
 //		System.out.println("Number of times " + times + " temp " + temp);
 	System.out.println("Best Route was: \n" + s);
 	System.out.println("\nBest fitness was (SA): " + f);
-} 	
+	
+	double eff=Efficiency.CalculateEfficiencyOfMST(f);
+	double opt_eff=Efficiency.CalcEfficiencyOPT(f);
+	
+	System.out.println(opt_eff);
+	System.out.println(eff);
+	
+	return f;
+	} 	
  }
  
