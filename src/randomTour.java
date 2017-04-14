@@ -34,7 +34,7 @@ public class randomTour {
 			p.remove(i);
 			
 		}
-		System.out.println(t);
+		
 		return t;
 	
 	}

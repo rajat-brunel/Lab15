@@ -17,25 +17,26 @@ public class RMHC {
 	//	ArrayList<Integer> s_final = new ArrayList<Integer>();
 		
 		
-		s=randomTour.tour(n);
+		s=randomTour.tour();
 		
-		RMHC(iter,n,s);
+		System.out.println(s);
+		
+		RMHC(iter,s);
 	}
 	
-	public static ArrayList<Integer> RMHC(int iter, int n, ArrayList<Integer> s){	
+	public static ArrayList<Integer> RMHC(int iter, ArrayList<Integer> s){	
 		
 	ArrayList<Integer> change = new ArrayList<Integer>();
-	String filename="TSP_48.txt";
-	double dist[][]=TSP.ReadArrayFile(filename, " ");
+	
 	
 	//Fitness Current Solution
-	double f=fitness.distance(n,s,dist);
+	double f=fitness.distance(s);
 //	double f_final=0;
 	
 	for (int i=0;i<iter;i++){
 		
-		change=SmallChange.swap(s, n);
-		double f_new=fitness.distance(n, change,dist);
+		change=SmallChange.swap(s);
+		double f_new=fitness.distance(change);
 		
 			if (f_new<f){
 				
