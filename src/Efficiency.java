@@ -4,7 +4,7 @@ public class Efficiency {
 	
 	private static double[][] MST() {
 		int n=Algorithms.cities;
-		String filename="TSP_"+n+".txt";
+		String filename=Functions.file(n);
 		double dist[][]=TSP.ReadArrayFile(filename, " ");
 		double[][] mstOfArray = MST.PrimsMST(dist);
 		return mstOfArray;
@@ -43,7 +43,7 @@ public class Efficiency {
 		
 		String cities= String.valueOf(n);
 		
-		String filename="TSP_"+n+"_OPT.txt";
+		String filename=Functions.OPT_file(n);
 		
 		t=TSP.ReadIntegerFile(filename);
 		

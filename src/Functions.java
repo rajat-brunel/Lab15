@@ -5,10 +5,29 @@ public class Functions {
 	 public static double[][] dataset(int cities) {
 		
 		double dist[][];
-		String filename="TSP_"+cities+".txt";
+		String filename=file(cities);
 		dist=TSP.ReadArrayFile(filename, " ");
 		return dist;
 	}
+	 
+	 public static String file(int cities){
+		 String path="dataset/";
+		 String start="TSP_";
+		 String end=".txt";
+		 
+		 String locat=path+start+cities+end;
+		 return locat;
+	 }
+	 
+	 public static String OPT_file(int cities){
+		 String path="dataset/";
+		 String start="TSP_";
+		 String opt="_OPT";
+		 String end=".txt";
+		 
+		 String locat=path+start+cities+opt+end;
+		 return locat;
+	 }
 	
 	public static ArrayList<Integer> swap(ArrayList<Integer> r_tour){
 			
