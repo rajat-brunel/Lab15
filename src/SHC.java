@@ -3,25 +3,16 @@ import java.util.ArrayList;
 public class SHC {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		int n=48;
-		int iter=25000;
-		
-		ArrayList<Integer> s = new ArrayList<Integer>();
-			
-		s=randomTour.tour(n);
-		
-		SHC(iter,n,s);		
 	}
 
-	public static double SHC(int iter, int n, ArrayList<Integer> s){
+	public static double SHC(int iter, ArrayList<Integer> s){
 		
 		ArrayList<Integer> s_new = new ArrayList<Integer>();
 		
-		double f=fitness.distance(n,s);
-		s_new=SmallChange.swap(s, n);
-		double f_new=fitness.distance(n, s_new);
+		double f=Functions.distance(s);
+		s_new=Functions.swap(s);
+		double f_new=Functions.distance(s_new);
 		
 		double k=1500.0;
 		
@@ -42,9 +33,9 @@ public class SHC {
 		
 		for (int i=0;i<iter;i++){
 			
-			s_new=SmallChange.swap(s, n);
+			s_new=Functions.swap(s);
 			
-			f_new=fitness.distance(n, s_new);
+			f_new=Functions.distance(s_new);
 			
 			power=(f_new-f)/T;
 			
@@ -73,12 +64,7 @@ public class SHC {
 	//	System.out.println("Best Route was: \n" + s);
 		System.out.println("\nBest fitness was (SHC): " + f);
 		
-		double eff=Efficiency.CalculateEfficiencyOfMST(f);
-		double opt_eff=Efficiency.CalcEfficiencyOPT(f);
-		
-		System.out.println(opt_eff);
-		System.out.println(eff);
-		
+		Efficiency.percentage(f);
 		return f;
 	}
 }

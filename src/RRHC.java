@@ -11,10 +11,10 @@ public class RRHC {
 		
 		
 		ArrayList<Integer> s = new ArrayList<Integer>();
-		RRHC(iter,n,runs,s);
+		
 	}
 	
-	public static void RRHC(int iter, int n, int runs, ArrayList<Integer> s){
+	public static void RRHC(int iter, int runs, ArrayList<Integer> s){
 		
 		
 		
@@ -23,15 +23,15 @@ public class RRHC {
 		int iteration = 0;
 		double fitness_RRHC=0;
 		
-		double f=fitness.distance(n, s);
+		double f=Functions.distance(s);
 		for (int j=0;j<runs;j++){
 		ArrayList<Integer> change = new ArrayList<Integer>();
-		change=SmallChange.swap(s, n);
+		change=Functions.swap(s);
 		
 			
 		//Fitness Current Solution
-		s=RMHC.RMHC(iter, n, s);
-		fitness_RRHC=fitness.distance(n, s);
+		s=RMHC.RMHC(iter, s);
+		fitness_RRHC=Functions.distance(s);
 	//	System.out.println("Best Route was: \n" + s);
 	//	System.out.println("f: " + f);
 	//	System.out.println("f_rrhc: " + fitness_RRHC);
@@ -40,17 +40,13 @@ public class RRHC {
 		if (fitness_RRHC<f){
 			f=fitness_RRHC;
 		}
-		s=randomTour.tour(n);
+		s=Functions.tour();
 		//System.out.println("\nBest fitness was: " + f);
 		}
 		System.out.println("\nThe Best Fitness from all the runs was (RRHC) : " + f);
 	//	System.out.println("\nThe Iteration was : " + (iteration+1));
+		Efficiency.percentage(f);
 		
-		double eff=Efficiency.CalculateEfficiencyOfMST(f);
-		double opt_eff=Efficiency.CalcEfficiencyOPT(f);
-		
-		System.out.println(opt_eff);
-		System.out.println(eff);
 	}
 	
 }

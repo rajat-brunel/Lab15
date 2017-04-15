@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Efficiency {
@@ -52,10 +53,13 @@ public class Efficiency {
 	}
 	
 	public static void percentage(double fitness){
-		double eff=Efficiency.MST_Efficiency(fitness);
+		
+		 DecimalFormat f = new DecimalFormat("##.00");
+		
+		double mst_eff=Efficiency.MST_Efficiency(fitness);
 		double opt_eff=Efficiency.OPT_Efficiency(fitness);
 
-		System.out.println(opt_eff);
-		System.out.println(eff);
+		System.out.println(f.format(opt_eff));
+		System.out.println(f.format(mst_eff));
 	}
 }

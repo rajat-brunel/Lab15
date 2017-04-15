@@ -50,6 +50,7 @@ public class RMHC {
 	
 //	System.out.println("Best Route was: \n" + s);
 	System.out.println("\nBest fitness was (RMHC): " + f);
+	
 	Efficiency.percentage(f);
 	return s;
 	
