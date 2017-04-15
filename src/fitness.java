@@ -29,7 +29,7 @@ public class fitness {
 				double s=0;
 				
 				// run a loop until we have visited all of the cities
-				for (int i=0;i<Algorithms.cities-1;i++)
+				for (int i=0;i<(Algorithms.cities-1);i++)
 				{	
 					//first city
 					int a = t.get(i);

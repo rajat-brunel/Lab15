@@ -50,10 +50,10 @@ public class RMHC {
 	
 //	System.out.println("Best Route was: \n" + s);
 	System.out.println("\nBest fitness was (RMHC): " + f);
-	double eff=Efficiency.CalculateEfficiencyOfMST(f);
-//	double opt_eff=Efficiency.CalcEfficiencyOPT(f);
-	
-//	System.out.println(opt_eff);
+	double eff=Efficiency.MST_Efficiency(f);
+	double opt_eff=Efficiency.OPT_Efficiency(f);
+
+	System.out.println(opt_eff);
 	System.out.println(eff);
 	return s;
 	
