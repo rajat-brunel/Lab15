@@ -32,7 +32,7 @@ public static double SA(int iter, ArrayList<Integer> s){
 		
 		double cr= Math.pow(t_val, 1.0/iter);
 		
-	System.out.println("Cooling Rate: " + cr);
+//	System.out.println("Cooling Rate: " + cr);
 
  		
 		
@@ -79,9 +79,7 @@ public static double SA(int iter, ArrayList<Integer> s){
 		
 //		System.out.println("Number of times " + times + " temp " + temp);
 //	System.out.println("Best Route was: \n" + s);
-	System.out.println("\nBest fitness was (SA): " + f);
-	
-	Efficiency.percentage(f);
+//	System.out.println("\nBest fitness was (SA): " + f);
 	
 	return f;
 	} 	

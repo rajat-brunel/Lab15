@@ -62,9 +62,9 @@ public class SHC {
 		}
 		
 	//	System.out.println("Best Route was: \n" + s);
-		System.out.println("\nBest fitness was (SHC): " + f);
+	//	System.out.println("\nBest fitness was (SHC): " + f);
 		
-		Efficiency.percentage(f);
+		
 		return f;
 	}
 }
