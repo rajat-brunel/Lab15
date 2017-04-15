@@ -2,19 +2,18 @@ import java.util.ArrayList;
 
 public class Algorithms {
 	
-	static int cities=51;
-	static double distanceArray[][]=dataset(cities);
+	static int cities=48;
+	static double distanceArray[][];
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		
 		int iter=5000;
 		int runs=2;
+		distanceArray=Functions.dataset(cities);
 
 		ArrayList<Integer> s = new ArrayList<Integer>();	
 		
-		s=randomTour.tour();	
+		s=Functions.tour();	
 		double fitness=Efficiency.OPT_fitness(cities);
 		System.out.println(fitness);
 		
@@ -25,10 +24,5 @@ public class Algorithms {
 		
 	}
 	
-	public static double[][] dataset(int cities){
-		double dist[][];
-		String filename="TSP_"+cities+".txt";
-		dist=TSP.ReadArrayFile(filename, " ");
-		return dist;
-	}
+	
 }

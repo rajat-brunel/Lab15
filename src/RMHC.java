@@ -17,7 +17,7 @@ public class RMHC {
 	//	ArrayList<Integer> s_final = new ArrayList<Integer>();
 		
 		
-		s=randomTour.tour();
+		s=Functions.tour();
 		
 		System.out.println(s);
 		
@@ -30,13 +30,13 @@ public class RMHC {
 	
 	
 	//Fitness Current Solution
-	double f=fitness.distance(s);
+	double f=Functions.distance(s);
 //	double f_final=0;
 	
 	for (int i=0;i<iter;i++){
 		
-		change=SmallChange.swap(s);
-		double f_new=fitness.distance(change);
+		change=Functions.swap(s);
+		double f_new=Functions.distance(change);
 		
 			if (f_new<f){
 				

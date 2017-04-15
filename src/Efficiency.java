@@ -47,7 +47,7 @@ public class Efficiency {
 		
 		t=TSP.ReadIntegerFile(filename);
 		
-		double dist=fitness.distance(t);
+		double dist=Functions.distance(t);
 		return dist;
 	}
 }
