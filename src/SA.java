@@ -26,9 +26,7 @@ public static double SA(int iter, ArrayList<Integer> s){
 	//	double T_start=119.3875;
 //	System.out.println("T: " + T_start);
 		
-	double T_iter=0.001;
-		
-
+		double T_iter=0.001;
 		
 		double t_val=T_iter/T_start;
 		

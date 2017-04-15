@@ -18,7 +18,7 @@ public class SHC {
 		
 		double T=f/k;
 		
-		System.out.println("The value of T is :" + T);
+	//	System.out.println("The value of T is :" + T);
 		
 		double e=Math.E;
 		

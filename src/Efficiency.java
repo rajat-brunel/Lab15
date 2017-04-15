@@ -52,14 +52,15 @@ public class Efficiency {
 		return dist;
 	}
 	
-	public static void percentage(double fitness){
+	public static String percentage(double fitness){
 		
 		 DecimalFormat f = new DecimalFormat("##.00");
 		
 		double mst_eff=Efficiency.MST_Efficiency(fitness);
 		double opt_eff=Efficiency.OPT_Efficiency(fitness);
-
-		System.out.println(f.format(opt_eff));
-		System.out.println(f.format(mst_eff));
+		
+		String eff=" "+f.format(opt_eff)+" " + f.format(mst_eff);
+		System.out.println(eff);
+		return eff;
 	}
 }

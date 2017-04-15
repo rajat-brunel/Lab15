@@ -14,7 +14,7 @@ public class RRHC {
 		
 	}
 	
-	public static void RRHC(int iter, int runs, ArrayList<Integer> s){
+	public static double RRHC(int iter, int runs, ArrayList<Integer> s){
 		
 		
 		
@@ -30,8 +30,8 @@ public class RRHC {
 		
 			
 		//Fitness Current Solution
-		s=RMHC.RMHC(iter, s);
-		fitness_RRHC=Functions.distance(s);
+	
+		fitness_RRHC=RMHC.RMHC(iter, s);
 	//	System.out.println("Best Route was: \n" + s);
 	//	System.out.println("f: " + f);
 	//	System.out.println("f_rrhc: " + fitness_RRHC);
@@ -43,9 +43,10 @@ public class RRHC {
 		s=Functions.tour();
 		//System.out.println("\nBest fitness was: " + f);
 		}
-		System.out.println("\nThe Best Fitness from all the runs was (RRHC) : " + f);
+	//	System.out.println("\nThe Best Fitness from all the runs was (RRHC) : " + f);
 	//	System.out.println("\nThe Iteration was : " + (iteration+1));
-		Efficiency.percentage(f);
+		
+		return f;
 		
 	}
 	

@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Functions {
@@ -127,4 +130,34 @@ public class Functions {
 	
 	}
 	 
+	public static void Results(double fitness, String efficiency, String algorithm, boolean append){
+		
+		String fitness_string= Double.toString(fitness);
+		String filename="results/"+algorithm+"_"+Algorithms.cities+"_"+Algorithms.iter+".txt";
+		
+		try {
+
+		      File file = new File(filename);
+
+		      if (file.createNewFile()){
+		        System.out.println("File is created!");
+		      }else{
+		        System.out.println("File already exists.");
+		      }
+
+	    	} catch (IOException e) {
+		      e.printStackTrace();
+	    	}
+		
+		try{
+			FileWriter writer = new FileWriter(filename, append);
+			writer.write(fitness_string+" "+efficiency);
+			writer.write("\n"); 
+			writer.close();
+			
+		}catch(IOException e2) {
+			System.out.println("File Not Found!");
+			e2.printStackTrace();
+		}
+	}
 }
