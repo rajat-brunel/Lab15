@@ -2,12 +2,12 @@ import java.util.ArrayList;
 
 public class Algorithms {
 	
-	static int cities=48;
+	static int cities=100;
 	static double distanceArray[][];
 	
 	public static void main(String[] args) {
 		
-		int iter=5000;
+		int iter=12000;
 		int runs=2;
 		distanceArray=Functions.dataset(cities);
 

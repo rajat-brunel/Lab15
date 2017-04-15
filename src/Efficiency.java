@@ -50,4 +50,12 @@ public class Efficiency {
 		double dist=Functions.distance(t);
 		return dist;
 	}
+	
+	public static void percentage(double fitness){
+		double eff=Efficiency.MST_Efficiency(fitness);
+		double opt_eff=Efficiency.OPT_Efficiency(fitness);
+
+		System.out.println(opt_eff);
+		System.out.println(eff);
+	}
 }
