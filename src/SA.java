@@ -20,7 +20,7 @@ public static double SA(int iter, ArrayList<Integer> s){
 			
 	ArrayList<Integer> s_new = new ArrayList<Integer>();
 		
-	double k=50.0;	
+	double k=1000.0;	
 	
 	double T_start=f/k;
 	//	double T_start=119.3875;

@@ -14,7 +14,7 @@ public class SHC {
 		s_new=Functions.swap(s);
 		double f_new=Functions.distance(s_new);
 		
-		double k=500.0;
+		double k=5000.0;
 		
 		double T=f/k;
 		
@@ -58,7 +58,7 @@ public class SHC {
 				s=s_new;
 				f=f_new;
 		}
-
+	//	System.out.println(f);
 		}
 		
 	//	System.out.println("Best Route was: \n" + s);
