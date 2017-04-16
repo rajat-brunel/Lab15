@@ -14,7 +14,7 @@ public class SHC {
 		s_new=Functions.swap(s);
 		double f_new=Functions.distance(s_new);
 		
-		double k=1500.0;
+		double k=500.0;
 		
 		double T=f/k;
 		

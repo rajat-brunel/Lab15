@@ -9,7 +9,7 @@ public class Algorithms {
 	public static void main(String[] args) {
 		
 		iter=100000;
-		int runs=2;
+		int runs=3;
 		
 		distanceArray=Functions.dataset(cities);
 
