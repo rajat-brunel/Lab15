@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Algorithms {
 	
-	static int cities=100;
+	static int cities=442;
 	static double distanceArray[][];
 	static int iter;
 	
