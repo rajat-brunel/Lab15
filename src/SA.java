@@ -20,10 +20,10 @@ public static double SA(int iter, ArrayList<Integer> s){
 			
 	ArrayList<Integer> s_new = new ArrayList<Integer>();
 		
-	double k=500.0;	
+	double k=200.0;	
 	
 	double T_start=f/k;
-	//	double T_start=119.3875;
+
 //	System.out.println("T: " + T_start);
 		
 		double T_iter=0.001;
@@ -36,7 +36,7 @@ public static double SA(int iter, ArrayList<Integer> s){
 
  		
 		
- 	double temp=T_start;
+		double temp=T_start;
 		int times=0;
 		
 		double p=0.0;
@@ -70,16 +70,16 @@ public static double SA(int iter, ArrayList<Integer> s){
 			s=s_new;
 			f=f_new;
 		}
-//			System.out.println("iter " + times + " temp " + temp + " p " + p + " delta f " + delta_f);
+//		System.out.println("iter " + times + " temp " + temp + " p " + p + " delta f " + delta_f);
 			temp=cr*temp;
-//		System.out.println(f);
+//			System.out.println(f);
 		//	System.out.println("Current route : " + s);
 			times++;
 		}
 		
 //		System.out.println("Number of times " + times + " temp " + temp);
-//	System.out.println("Best Route was: \n" + s);
-//	System.out.println("\nBest fitness was (SA): " + f);
+//		System.out.println("Best Route was: \n" + s);
+//		System.out.println("\nBest fitness was (SA): " + f);
 	
 	return f;
 	} 	

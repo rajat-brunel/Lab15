@@ -57,8 +57,16 @@ public class Efficiency {
 		 DecimalFormat f = new DecimalFormat("##.00");
 		
 		double mst_eff=Efficiency.MST_Efficiency(fitness);
-		double opt_eff=Efficiency.OPT_Efficiency(fitness);
+		double opt_eff=0.0;
 		
+		if (Algorithms.cities==48||Algorithms.cities==51||
+				Algorithms.cities==52||Algorithms.cities==70||
+				Algorithms.cities==76||Algorithms.cities==100||
+				Algorithms.cities==105||Algorithms.cities==442){
+			
+		opt_eff=Efficiency.OPT_Efficiency(fitness);
+		
+		}
 		String eff=" "+f.format(opt_eff)+" " + f.format(mst_eff);
 		System.out.println(eff);
 		return eff;

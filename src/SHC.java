@@ -14,11 +14,11 @@ public class SHC {
 		s_new=Functions.swap(s);
 		double f_new=Functions.distance(s_new);
 		
-		double k=5000.0;
+		double k=6000.0;
 		
 		double T=f/k;
 		
-	//	System.out.println("The value of T is :" + T);
+//		System.out.println("The value of T is :" + T);
 		
 		double e=Math.E;
 		

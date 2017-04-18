@@ -2,13 +2,14 @@ import java.util.ArrayList;
 
 public class Algorithms {
 	
-	static int cities=442;
+	static int cities=574;
 	static double distanceArray[][];
 	static int iter;
 	
 	public static void main(String[] args) {
 		
-		iter=100000;
+		for (iter=10000;iter<=100000;iter=iter+10000){
+		for(int times=0;times<5;times++){
 		int runs=2;
 		
 		distanceArray=Functions.dataset(cities);
@@ -16,7 +17,7 @@ public class Algorithms {
 		ArrayList<Integer> s = new ArrayList<Integer>();	
 		s=Functions.tour();	
 		
-		
+			
 		//Random Mutation Hill Climbing
 		double fitness_rmhc=RMHC.RMHC(iter, s);
 		System.out.print(fitness_rmhc);
@@ -45,7 +46,8 @@ public class Algorithms {
 		String eff_sa=Efficiency.percentage(fitness_sa);
 		//Write Results to File
 		Functions.Results(fitness_sa, eff_sa, "SA", true);
-		
+		}
+		}
 	}
 	
 	
