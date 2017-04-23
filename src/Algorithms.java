@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Algorithms {
 	
-/** Travelling Salesman Problem
+/** Travelling SalesPerson Problem
  *  Lab 15 - Main Class
  *  Algorithms and their Applications
  *  Student ID: 1534189
@@ -14,17 +14,21 @@ public class Algorithms {
 	
 	public static void main(String[] args) {
 		
+		//Number of RRHC Runs
 		int runs=2;
+		//Number of Iterations
 		iter=100000;
+		//Gets the Dataset
 		distanceArray=Functions.dataset(cities);
 		
-	
+		//A New Random Tour
 		ArrayList<Integer> s = new ArrayList<Integer>();	
 		s=Functions.tour();	
 		
 		//Output The Cities and Iterations
-		System.out.println("Number of Cities= "+ cities);
-		System.out.print("\nNumber of Iterations= "+iter + "\n");
+		System.out.println("Number of Cities = "+ cities);
+		System.out.print("\nNumber of Iterations = "+iter + "\n");
+		System.out.println("===================================");
 		
 		//Output Heading
 		System.out.println("\n"+"\t Fitness "+ "\tOPT"+ "\tMST");
