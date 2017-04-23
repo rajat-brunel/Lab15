@@ -2,52 +2,63 @@ import java.util.ArrayList;
 
 public class Algorithms {
 	
-	static int cities=574;
+/** Travelling Salesman Problem
+ *  Lab 15 - Main Class
+ *  Algorithms and their Applications
+ *  Student ID: 1534189
+ */
+	
+	static int cities=48;
 	static double distanceArray[][];
 	static int iter;
 	
 	public static void main(String[] args) {
 		
-		for (iter=10000;iter<=100000;iter=iter+10000){
-		for(int times=0;times<5;times++){
 		int runs=2;
-		
+		iter=100000;
 		distanceArray=Functions.dataset(cities);
-
+		
+	
 		ArrayList<Integer> s = new ArrayList<Integer>();	
 		s=Functions.tour();	
 		
-			
+		//Output The Cities and Iterations
+		System.out.println("Number of Cities= "+ cities);
+		System.out.print("\nNumber of Iterations= "+iter + "\n");
+		
+		//Output Heading
+		System.out.println("\n"+"\t Fitness "+ "\tOPT"+ "\tMST");
+		
 		//Random Mutation Hill Climbing
-		double fitness_rmhc=RMHC.RMHC(iter, s);
-		System.out.print(fitness_rmhc);
+		double fitness_rmhc=RandomMutationHC.RMHC(iter, s);
+		System.out.print("RMHC "+fitness_rmhc);
 		String eff_rmhc=Efficiency.percentage(fitness_rmhc);
-		//Write Results to File
-		Functions.Results(fitness_rmhc, eff_rmhc, "RMHC", true);
+	//	Write Results to File
+	//	Functions.Results(fitness_rmhc, eff_rmhc, "RMHC", true);
 		
 	
 		//Random Restart Hill Climbing
-		double fitness_rrhc=RRHC.RRHC(iter/runs, runs,s);
-		System.out.print(fitness_rrhc);
+		double fitness_rrhc=RandomRestartHC.RRHC(iter/runs, runs,s);
+		System.out.print("RRHC "+fitness_rrhc);
 		String eff_rrhc=Efficiency.percentage(fitness_rrhc);
-		//Write Results to File
-		Functions.Results(fitness_rrhc, eff_rrhc, "RRHC", true);
+	//	Write Results to File
+	//	Functions.Results(fitness_rrhc, eff_rrhc, "RRHC", true);
 		
 		//Stochastic Hill Climbing
-		double fitness_shc=SHC.SHC(iter, s);
-		System.out.print(fitness_shc);
+		double fitness_shc=StochasticHC.SHC(iter, s);
+		System.out.print("SHC  "+fitness_shc);
 		String eff_shc=Efficiency.percentage(fitness_shc);
-		//Write Results to File
-		Functions.Results(fitness_shc, eff_shc, "SHC", true);
+	//	Write Results to File
+	//	Functions.Results(fitness_shc, eff_shc, "SHC", true);
 		
 		//Simulated Annealing
-		double fitness_sa=SA.SA(iter, s);	
-		System.out.print(fitness_sa);
+		double fitness_sa=SimulatedAnnealing.SA(iter, s);	
+		System.out.print("SA   "+fitness_sa);
 		String eff_sa=Efficiency.percentage(fitness_sa);
-		//Write Results to File
-		Functions.Results(fitness_sa, eff_sa, "SA", true);
-		}
-		}
+	//	Write Results to File
+	//	Functions.Results(fitness_sa, eff_sa, "SA", true);
+		
+	
 	}
 	
 	
